@@ -1,20 +1,41 @@
+
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Sleep Tracker
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title> Sleep Tracker </ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Sleep Tracker</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+	<div id="container">
+		<div class="tracker-card centered">
+			<div class="tracker-card-left">
+				<div class="card-text">
+					<p class="tracker-title">
+						{{trackerStatus=='inactive'? "Enjoy Your Rest!" : "Elapsed
+						Sleep Time"}}
+					</p>
+					<p *ngIf="trackerStatus=='active'" class="semi-bold time">{{elapsedTimeStr}}</p>
+				</div>
+				<button
+					(click)="trackerToggle()"
+					[ngClass]="trackerStatus=='inactive' ? 'btn lime-green': 'btn red'"
+				>
+					<span>{{trackerStatus=="inactive"? "Start" : "Stop"}} Tracking</span>
+				</button>
+			</div>
+			<div class="tracker-card-right">
+				<ion-icon name="moon"></ion-icon>
+			</div>
+		</div>
+		<div class="sleep-stats-card">
+			<div class="sleep-stats-card-left">
+				<p>Previous Sleep Stats</p>
+			</div>
+			<div class="sleep-stats-card-right">
+				<button class="btn lime-green">Check</button>
+			</div>
+		</div>
+		<app-timer></app-timer>
+	</div>
 </ion-content>

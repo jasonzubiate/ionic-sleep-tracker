@@ -24,3 +24,46 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-family: 'Comfortaa', cursive;
+  font-size: 40px;
+  background-color: #E1E4EC;
+}
+.bold {
+  font-weight: 600;
+}
+.btn {
+	padding: .6rem 1rem;
+	border-radius: .5rem;
+	font-weight: 500;
+  font-size: .9rem;
+}
+.centered {
+	left: 50%;
+}
+.medium {
+  font-weight: 400;
+}
+.semi-bold {
+  font-weight: 600;
+  font-size: 18px;
+}
+.bold {
+  font-weight: 600;
+}
+.lime-green {
+  color: #3d766c;
+  background-color: #f3fe39;
+}
+.red {
+  color: white;
+  background-color: red;
+}

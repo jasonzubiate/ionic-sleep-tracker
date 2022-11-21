@@ -1,27 +1,63 @@
 #container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+	min-height: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color:  #E1E4EC;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.tracker-card {
+  padding: 1.1rem;
+	background-color: #3d766c;
+	color: #e1e4ec;
+	width: 90%;
+  border-radius: .5rem;
+  min-height: 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.card-text{
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
 }
-
-#container a {
-  text-decoration: none;
+.icon {
+	background-color: red;
+  width: 50px;
+  height: 50px;
+}
+.tracker-card-left {
+  width: 75%;
+}
+.tracker-card-right {
+  display: flex;
+  align-items: center;
+}
+ion-icon{
+  font-size: 48px;
+  color: #f3fe39;
+}
+.sleep-stats-card {
+  background-color: white;
+  padding: 0.9rem;
+  font-size: .9rem;
+  width: 90%;
+  border-radius: .5rem;
+  color: #3d766c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sleep-stats-card-left{ 
+  width: 70%;
+}
+.sleep-stats-card-right {
+  width: 30%;
+}
+.time {
+  font-size: 1.3rem;
+}
+.tracker-title {
+  font-weight: 300;
 }
