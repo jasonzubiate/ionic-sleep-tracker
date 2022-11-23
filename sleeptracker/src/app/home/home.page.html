@@ -1,4 +1,3 @@
-
 <ion-header [translucent]="true">
 	<ion-toolbar>
 		<ion-title> Sleep Tracker </ion-title>
@@ -6,16 +5,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-	<div id="container">
-		<div class="tracker-card centered">
+	<div class="container">
+		<div class="tracker-card">
 			<div class="tracker-card-left">
 				<div class="card-text">
 					<p class="tracker-title">
-						{{trackerStatus=='inactive'? "Enjoy Your Rest!" : "Elapsed
-						Sleep Time"}}
+						{{trackerStatus=='inactive'? "Enjoy Your Rest!" : "Sleep Start
+						Time"}}
 					</p>
-					<p *ngIf="trackerStatus=='active'" class="semi-bold time">{{elapsedTimeStr}}</p>
+					<p *ngIf="trackerStatus=='active'" class="semi-bold time">
+						{{startTimeStr}}
+					</p>
 				</div>
 				<button
 					(click)="trackerToggle()"
@@ -33,9 +33,16 @@
 				<p>Previous Sleep Stats</p>
 			</div>
 			<div class="sleep-stats-card-right">
-				<button class="btn lime-green">Check</button>
+				<button class="btn lime-green" (click)="viewLoggedData()">Check</button>
 			</div>
 		</div>
-		<app-timer></app-timer>
 	</div>
+	<ion-range
+			[min]="1"
+			[max]="7"
+			[value]="4"
+			[pin]="true"
+			[ticks]="true"
+			[snaps]="true"
+		></ion-range>
 </ion-content>

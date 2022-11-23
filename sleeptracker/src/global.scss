@@ -32,22 +32,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-.body {
+ion-content {
   font-family: 'Comfortaa', cursive;
-  font-size: 40px;
-  background-color: #E1E4EC;
-}
-.bold {
-  font-weight: 600;
 }
 .btn {
 	padding: .6rem 1rem;
 	border-radius: .5rem;
 	font-weight: 500;
   font-size: .9rem;
-}
-.centered {
-	left: 50%;
 }
 .medium {
   font-weight: 400;
