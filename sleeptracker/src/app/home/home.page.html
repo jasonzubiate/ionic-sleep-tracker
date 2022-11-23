@@ -33,17 +33,22 @@
 				<p>Previous Sleep Stats</p>
 			</div>
 			<div class="sleep-stats-card-right">
-				<button class="btn lime-green" (click)="viewLoggedData()">Check</button>
+				<button
+					class="btn lime-green"
+					(click)="displaySleepLog = !displaySleepLog"
+				>
+					<span>{{displaySleepLog==false? "Check" : "Close"}}</span>
+				</button>
 			</div>
 		</div>
-		<div class="sleep-log">{{displaySleepLog ? loggedTimes : "none"}}</div>
+		<div
+			class="sleep-log-container"
+			*ngIf="displaySleepLog && loggedTimes.length > 0"
+		>
+			<div class="sleep-log-data" *ngFor="let sleepSession of loggedTimes">
+				<div class="date-string">{{sleepSession.dateString()}}</div>
+				<div class="summary-string bold">{{sleepSession.summaryString()}}</div>
+			</div>
+		</div>
 	</div>
-	<ion-range
-		[min]="1"
-		[max]="7"
-		[value]="4"
-		[pin]="true"
-		[ticks]="true"
-		[snaps]="true"
-	></ion-range>
 </ion-content>

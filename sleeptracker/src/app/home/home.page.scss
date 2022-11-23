@@ -40,14 +40,13 @@ ion-icon{
 }
 .sleep-stats-card {
   background-color: white;
-  padding: 0.9rem;
+  padding: .7rem;
   font-size: .9rem;
   width: 90%;
   border-radius: .5rem;
   color: #3d766c;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .sleep-stats-card-left{ 
   width: 70%;
@@ -60,4 +59,21 @@ ion-icon{
 }
 .tracker-title {
   font-weight: 300;
+}
+.sleep-log-container {
+  background-color: white;
+  padding: .7rem;
+  font-size: .7rem;
+  width: 90%;
+  border-radius: .5rem;
+}
+.sleep-log-data {
+  margin-bottom: 1rem;
+}
+.sleep-log-data:last-child {
+  margin-bottom: 0;
+}
+.sleep-log-container .summary-string {
+  color: #3d766c;
+  font-weight: bold;
 }

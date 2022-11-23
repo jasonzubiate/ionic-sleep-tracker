@@ -30,13 +30,13 @@ export class HomePage {
 
 	startTracker() {
 		this.trackerStatus = "active";
-		this.startTime = Date.now();
+		this.startTime = new Date();
 		this.startTimeStr = formatDate(Date.now(), "shortTime", "en-US") ;
 	}
 
 	clearTrackerTimer() {
 		this.trackerStatus = "inactive";
-		this.endTime = Date.now();
+		this.endTime = new Date;
 		this.loggedTimes.push(new OvernightSleepData(this.startTime, this.endTime));
 	}
 
@@ -46,11 +46,11 @@ export class HomePage {
 			: this.clearTrackerTimer();
 	}
 
-	viewLoggedData() {
-		this.displaySleepLog = true;
-		console.log(this.loggedTimes)
-		for (let sleepSession in this.loggedTimes) {
-			console.log(this.loggedTimes[sleepSession])
-		}
-	}
+	// viewLoggedData() {
+	// 	this.displaySleepLog = true;
+	// 	console.log(this.loggedTimes)
+	// 	for (let sleepSession in this.loggedTimes) {
+	// 		console.log(`${this.loggedTimes[sleepSession].dateString()} ${this.loggedTimes[sleepSession].summaryString()}`)
+	// 	}
+	// }
 }
