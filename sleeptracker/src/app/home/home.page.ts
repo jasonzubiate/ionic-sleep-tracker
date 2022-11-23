@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
+import { formatDate } from "@angular/common";
 import { SleepService } from "../services/sleep.service";
-import { SleepData } from "../data/sleep-data";
 import { OvernightSleepData } from "../data/overnight-sleep-data";
 import { StanfordSleepinessData } from "../data/stanford-sleepiness-data";
 import { TimerComponent } from "../components/timer/timer.component";
@@ -13,10 +13,10 @@ import { TimerComponent } from "../components/timer/timer.component";
 export class HomePage {
 	trackerStatus: string = "inactive";
 	counter: number;
-	timerRef;
-	loggedTime;
+	endTime;
 	startTime;
-	elapsedTimeStr = "8 hours 30 minutes";
+	loggedTime
+	startTimeStr = "8 hours 30 minutes";
 
 	constructor(public sleepService: SleepService) {}
 
@@ -31,20 +31,14 @@ export class HomePage {
 
 	startTracker() {
 		this.trackerStatus = "active";
-		if (this.trackerStatus == "active") {
-			this.startTime = Date.now() - (this.counter || 0);
-			this.timerRef = setInterval(() => {
-				this.counter = Date.now() - this.startTime;
-			});
-		} else {
-			clearInterval(this.timerRef);
-			this.clearTrackerTimer()
-		}
+		this.startTimeStr = formatDate(Date.now(), "mediumTime", "en-US") ;
+		this.startTime = Date.now();
 	}
 
 	clearTrackerTimer() {
 		this.trackerStatus = "inactive";
-		this.loggedTime = new OvernightSleepData(this.startTime, this.loggedTime);
+		this.endTime = Date.now();
+		this.loggedTime = new OvernightSleepData(this.startTime, this.endTime);
 	}
 
 	async trackerToggle() {

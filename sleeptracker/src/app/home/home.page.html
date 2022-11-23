@@ -12,10 +12,9 @@
 			<div class="tracker-card-left">
 				<div class="card-text">
 					<p class="tracker-title">
-						{{trackerStatus=='inactive'? "Enjoy Your Rest!" : "Elapsed
-						Sleep Time"}}
+						{{trackerStatus=='inactive'? "Enjoy Your Rest!" : "Sleep Start Time"}}
 					</p>
-					<p *ngIf="trackerStatus=='active'" class="semi-bold time">{{elapsedTimeStr}}</p>
+					<p *ngIf="trackerStatus=='active'" class="semi-bold time">{{startTimeStr}}</p>
 				</div>
 				<button
 					(click)="trackerToggle()"
@@ -36,6 +35,8 @@
 				<button class="btn lime-green">Check</button>
 			</div>
 		</div>
-		<app-timer></app-timer>
+		<div class="s">
+			<ion-range [min]="1" [max]="7" [value]="4" [pin]="true" [ticks]="true" [snaps]="true"></ion-range>
+		</div>
 	</div>
 </ion-content>
