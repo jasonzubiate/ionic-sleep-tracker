@@ -11,6 +11,7 @@ import { StanfordSleepinessData } from "../data/stanford-sleepiness-data";
 })
 export class HomePage {
 	trackerStatus: string = "inactive";
+	displaySleepLog = false;
 	startTime;
 	endTime;
 	loggedTimes = [];
@@ -46,6 +47,7 @@ export class HomePage {
 	}
 
 	viewLoggedData() {
+		this.displaySleepLog = true;
 		console.log(this.loggedTimes)
 		for (let sleepSession in this.loggedTimes) {
 			console.log(this.loggedTimes[sleepSession])
