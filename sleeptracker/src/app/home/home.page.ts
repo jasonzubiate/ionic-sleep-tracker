@@ -31,7 +31,7 @@ export class HomePage {
 
 	startTracker() {
 		this.trackerStatus = "active";
-		this.startTimeStr = formatDate(Date.now(), "mediumTime", "en-US") ;
+		this.startTimeStr = formatDate(Date.now(), "shortTime", "en-US") ;
 		this.startTime = Date.now();
 	}
 
