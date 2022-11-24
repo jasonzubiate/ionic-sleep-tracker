@@ -1,0 +1,71 @@
+ion-select {
+	--placeholder-color: #3d766c;
+	--placeholder-opacity: 1;
+	width: 90vw;
+	justify-content: center;
+	background-color: white;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	font-family: "Comfortaa", cursive;
+	font-size: 0.9rem;
+}
+
+ion-select::part(placeholder),
+ion-select::part(text) {
+	flex: 0 0 auto;
+}
+
+ion-select::part(text) {
+	color: #3d766c;
+}
+
+ion-select::part(icon) {
+	color: #3d766c;
+	opacity: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color:  #E1E4EC;
+}
+.sleep-stats-card {
+	background-color: white;
+	padding: 0.7rem;
+	font-size: 0.9rem;
+	width: 250px;
+	border-radius: 0.5rem;
+	color: #3d766c;
+	display: flex;
+	align-items: center;
+}
+.sleep-stats-card-left {
+	width: 70%;
+}
+.sleep-stats-card-right {
+	width: 30%;
+}
+.time {
+	font-size: 1.3rem;
+}
+.tracker-title {
+	font-weight: 300;
+}
+.sleep-log-container {
+	background-color: white;
+	padding: 0.7rem;
+	font-size: 0.7rem;
+	width: 90%;
+	border-radius: 0.5rem;
+}
+.sleep-log-data {
+	margin-bottom: 1rem;
+}
+.sleep-log-data:last-child {
+	margin-bottom: 0;
+}
+.sleep-log-container .summary-string {
+	color: #3d766c;
+	font-weight: bold;
+}

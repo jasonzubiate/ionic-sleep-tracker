@@ -33,6 +33,7 @@
   box-sizing: border-box;
 }
 ion-content {
+  overflow: hidden;
   font-family: 'Comfortaa', cursive;
 }
 .btn {
@@ -59,3 +60,4 @@ ion-content {
   color: white;
   background-color: red;
 }
+

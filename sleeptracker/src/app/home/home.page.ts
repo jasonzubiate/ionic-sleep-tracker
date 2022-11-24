@@ -1,8 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { formatDate } from "@angular/common";
 import { SleepService } from "../services/sleep.service";
 import { OvernightSleepData } from "../data/overnight-sleep-data";
-import { StanfordSleepinessData } from "../data/stanford-sleepiness-data";
+
 
 @Component({
 	selector: "app-home",
@@ -45,12 +45,4 @@ export class HomePage {
 			? this.startTracker()
 			: this.clearTrackerTimer();
 	}
-
-	// viewLoggedData() {
-	// 	this.displaySleepLog = true;
-	// 	console.log(this.loggedTimes)
-	// 	for (let sleepSession in this.loggedTimes) {
-	// 		console.log(`${this.loggedTimes[sleepSession].dateString()} ${this.loggedTimes[sleepSession].summaryString()}`)
-	// 	}
-	// }
 }

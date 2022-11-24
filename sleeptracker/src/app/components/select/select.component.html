@@ -1,0 +1,41 @@
+<div class="container">
+  <ion-select
+	placeholder="Select Sleepiness"
+	[(ngModel)]="value"
+	(ionChange)="storeValue()"
+>
+	<ion-select-option value="1">1</ion-select-option>
+	<ion-select-option value="2">2</ion-select-option>
+	<ion-select-option value="3">3</ion-select-option>
+	<ion-select-option value="4">4</ion-select-option>
+	<ion-select-option value="5">5</ion-select-option>
+	<ion-select-option value="6">6</ion-select-option>
+	<ion-select-option value="7">7</ion-select-option>
+</ion-select>
+
+<!-- Allows the user to view the logged sleepiness data -->
+<div class="sleep-stats-card">
+	<div class="sleep-stats-card-left">
+		<p>Sleepiness Log</p>
+	</div>
+	<div class="sleep-stats-card-right">
+		<button
+			class="btn lime-green"
+			(click)="displaySleepinessLog = !displaySleepinessLog"
+		>
+			<span>{{ displaySleepinessLog == false ? "Check" : "Close" }}</span>
+		</button>
+	</div>
+</div>
+
+<!-- Displays the logged sleepiness data -->
+<div
+	class="sleep-log-container"
+	*ngIf="displaySleepinessLog && loggedRatings.length > 0"
+>
+	<div class="sleep-log-data" *ngFor="let sleepinessRating of loggedRatings">
+		<div class="date-string">{{ sleepinessRating.summaryString() }}</div>
+	</div>
+</div>
+
+</div>

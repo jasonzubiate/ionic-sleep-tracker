@@ -6,6 +6,7 @@
 
 <ion-content [fullscreen]="true">
 	<div class="container">
+		<!-- Sleep tracker that displays the time the user went to sleep -->
 		<div class="tracker-card">
 			<div class="tracker-card-left">
 				<div class="card-text">
@@ -28,9 +29,11 @@
 				<ion-icon name="moon"></ion-icon>
 			</div>
 		</div>
+
+		<!-- Allows the user to view the logged sleep data -->
 		<div class="sleep-stats-card">
 			<div class="sleep-stats-card-left">
-				<p>Previous Sleep Stats</p>
+				<p>Sleep Log</p>
 			</div>
 			<div class="sleep-stats-card-right">
 				<button
@@ -41,6 +44,8 @@
 				</button>
 			</div>
 		</div>
+
+		<!-- Displays the logged sleep data -->
 		<div
 			class="sleep-log-container"
 			*ngIf="displaySleepLog && loggedTimes.length > 0"
@@ -50,5 +55,10 @@
 				<div class="summary-string bold">{{sleepSession.summaryString()}}</div>
 			</div>
 		</div>
+
+		<!-- Select component to rate the sleepiness of the user -->
+		<app-select></app-select>
 	</div>
+
+	<!-- Select component for the users sleepiness -->
 </ion-content>
